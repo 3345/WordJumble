@@ -6,7 +6,6 @@ Instruction:
    e.g. src_main_dict.txt should be renamed to dict.txt and placed under src/main/
 1. Run main() in WordJumble.java to play, follow the prompt in console.
 2. Input can have at most 16 unique characters, and can have at most 30 total characters.
-   16 unique chars can be solved in 40 seconds with 2182 words found, on a laptop.
 3. If change location of dict.txt, change FILE_PATH in WordJumble.java
 
 Impl Note:
@@ -21,8 +20,10 @@ Impl Note:
 Performance Note:
 =================
 1. Unique chars will have a worst case of O(2^n*n!) the limit of 16 unique chars is reasonable.
-2. The dictionary used in this program contains 113809 words which is much larger then a realistic dictionary.
-   It counts garbage like "aahs" as words, if use a normal dictionary of around 20000 words, the speed should be
+   16 unique characters can be solved in around 100ms to 40s depending on the frequency of the chars
+   appear in the dictionary.
+2. The dictionary used in this program contains 113809 words which is much larger then the total words commonly used.
+   e.g. It counts garbage like "aahs" as a word. if use a normal dictionary of around 20000 words, the speed should be
    much faster thanks to Impl(3).
 
 
