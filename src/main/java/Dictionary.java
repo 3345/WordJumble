@@ -8,7 +8,6 @@ public class Dictionary {
     public Trie trie;
     public Trie sortedTrie;
     public int maxWordLength;
-    public int wordCount;
 
     public Dictionary(String path) {
         this.path = path;
@@ -28,7 +27,6 @@ public class Dictionary {
                 maxWordLength = Math.max(maxWordLength, word.length());
                 trie.add(word);
                 sortedTrie.add(sort(word));
-                wordCount ++;
             }
 
         } catch (FileNotFoundException e) {

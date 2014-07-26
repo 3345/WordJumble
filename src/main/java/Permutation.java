@@ -11,6 +11,7 @@ public class Permutation {
         permute(chars, 0, result);
         return result;
     }
+
     /**
      * @return permutations as strings without duplication even if input has duplicated characters
      * eg. [a,b,b]->["abb","bab","bba"]

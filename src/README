@@ -1,12 +1,16 @@
 Word Jumble Game
 
+Instruction:
+============
+0. After download from Gist, rename file, put in the right directory.
+   e.g. src_main_dict.txt should be renamed to dict.txt and placed under src/main/
 1. Run main() in WordJumble.java to play, follow the prompt in console.
 2. Input can have at most 16 unique characters, and can have at most 30 total characters.
-   16 unique chars can be solved in 40 seconds 2182 words found, on a 2012 mac.
-3. Do not change location of dict.txt, if you must, change FILE_PATH in WordJumble.java
+   16 unique chars can be solved in 40 seconds with 2182 words found, on a laptop.
+3. If change location of dict.txt, change FILE_PATH in WordJumble.java
 
 Impl Note:
-
+==========
 1. Pre-process dictionary file to construct two tries, one in normal order and one in sorted order.
 2. Compute all UNIQUE combinations of characters contained in the input word.
 3. Each combination is already sorted, as it is necessary to ensure uniqueness.
@@ -15,11 +19,11 @@ Impl Note:
 4. For each remaining combination, compute its permutation, check against trie.
 
 Performance Note:
-
-1. Unique chars will incur a worst case of O(N!^M!), the limit of 16 unique chars is reasonable.
+=================
+1. Unique chars will have a worst case of O(N!^M!), where N, M are some number smaller than input length,
+   the limit of 16 unique chars is reasonable.
 2. Impl(3) is crucial, without it, 14 unique characters cannot be solved in reasonable time while with it,
    it can be solved in 13 seconds.
-
 3. The dictionary used in this program contains 113809 words which is much larger then a realistic dictionary.
    It counts garbage like "aahs" as words, if use a normal dictionary of around 20000 words, the speed should be
    much faster thanks to Impl(3).
