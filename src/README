@@ -22,9 +22,7 @@ Performance Note:
 =================
 1. Unique chars will have a worst case of O(N!^M!), where N, M are some number smaller than input length,
    the limit of 16 unique chars is reasonable.
-2. Impl(3) is crucial, without it, 14 unique characters cannot be solved in reasonable time while with it,
-   it can be solved in 13 seconds.
-3. The dictionary used in this program contains 113809 words which is much larger then a realistic dictionary.
+2. The dictionary used in this program contains 113809 words which is much larger then a realistic dictionary.
    It counts garbage like "aahs" as words, if use a normal dictionary of around 20000 words, the speed should be
    much faster thanks to Impl(3).
 
